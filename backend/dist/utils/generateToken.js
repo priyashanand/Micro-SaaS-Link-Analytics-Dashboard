@@ -10,3 +10,4 @@ const generateToken = (userId) => {
     return jsonwebtoken_1.default.sign({ id: userId }, JWT_SECRET, { expiresIn: '7d' });
 };
 exports.generateToken = generateToken;
+//# sourceMappingURL=generateToken.js.map

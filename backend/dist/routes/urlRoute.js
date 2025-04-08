@@ -12,3 +12,4 @@ router.get('/analytics', authMiddleware_1.authenticate, urlController_1.getAnaly
 router.post('/search', authMiddleware_1.authenticate, urlController_1.searchShortenedUrls);
 router.get('/links', authMiddleware_1.authenticate, urlController_1.getLinksForUser);
 exports.default = router;
+//# sourceMappingURL=urlRoute.js.map

@@ -18,8 +18,6 @@ const userModel_1 = __importDefault(require("../models/userModel"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const JWT_SECRET = process.env.SECRET_KEY;
-console.log('the secret');
-console.log(JWT_SECRET);
 const authenticate = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const authHeader = req.headers.authorization;
@@ -43,3 +41,4 @@ const authenticate = (req, res, next) => __awaiter(void 0, void 0, void 0, funct
     }
 });
 exports.authenticate = authenticate;
+//# sourceMappingURL=authMiddleware.js.map

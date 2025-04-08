@@ -66,3 +66,4 @@ const ShortLinkSchema = new mongoose_1.Schema({
 });
 const ShortLink = mongoose_1.default.model('ShortLink', ShortLinkSchema);
 exports.default = ShortLink;
+//# sourceMappingURL=urlModel.js.map

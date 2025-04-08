@@ -59,3 +59,4 @@ const ClickAnalyticsSchema = new mongoose_1.Schema({
 });
 const ClickAnalytics = mongoose_1.default.model('ClickAnalytics', ClickAnalyticsSchema);
 exports.default = ClickAnalytics;
+//# sourceMappingURL=analyticsModel.js.map
