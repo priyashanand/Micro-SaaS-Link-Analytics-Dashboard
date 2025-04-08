@@ -5,8 +5,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const JWT_SECRET = process.env.SECRET_KEY!;
-console.log('the secret')
-console.log(JWT_SECRET)
+
 interface AuthRequest extends Request {
   user?: any;
 }
