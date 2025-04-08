@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const backendUrl = process.env.BACKEND_URL ?? 'http://localhost:3000';
+const backendUrl = import.meta.env.BACKEND_URL ?? 'http://localhost:3000';
 
 
 export default function SignIn({ onAuth }: { onAuth: (token: string) => void }) {

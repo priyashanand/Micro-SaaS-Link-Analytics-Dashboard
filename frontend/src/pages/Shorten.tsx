@@ -3,7 +3,7 @@ import axios, {AxiosError} from 'axios';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const backendUrl = process.env.BACKEND_URL ?? 'http://localhost:3000';
+const backendUrl = import.meta.env.BACKEND_URL ?? 'http://localhost:3000';
 
 const Shorten = () => {
   const [originalUrl, setOriginalUrl] = useState('');

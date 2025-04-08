@@ -4,7 +4,7 @@ import {QRCodeSVG} from 'qrcode.react';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const backendUrl = process.env.BACKEND_URL ?? 'http://localhost:3000';
+const backendUrl = import.meta.env.BACKEND_URL ?? 'http://localhost:3000';
 
 interface Link {
   _id: string;
