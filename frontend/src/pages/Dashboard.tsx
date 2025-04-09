@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import {QRCodeSVG} from 'qrcode.react';
-import dotenv from 'dotenv';
-dotenv.config();
+import { QRCodeSVG } from 'qrcode.react';
 
-const backendUrl = import.meta.env.BACKEND_URL ?? 'http://localhost:3000';
+const backendUrl = import.meta.env.VITE_BACKEND_URL ?? 'http://localhost:3000';
 
 interface Link {
   _id: string;
@@ -26,12 +24,14 @@ interface Analytics {
   location: string;
 }
 
-export default function Dashboard() {
+interface DashboardProps {
+  token: string;
+}
+
+export default function Dashboard({ token }: DashboardProps) {
   const [links, setLinks] = useState<Link[]>([]);
   const [analytics, setAnalytics] = useState<Analytics[]>([]);
   const [loading, setLoading] = useState(true);
-
-  const token = localStorage.getItem('token');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -72,7 +72,7 @@ export default function Dashboard() {
         <div className="space-y-6">
           {links.map((link) => {
             const stats = getAnalyticsForLink(link._id);
-            const shortUrl = `${backendUrl}/${link.shortCode}`; 
+            const shortUrl = `${backendUrl}/${link.shortCode}`;
 
             return (
               <div

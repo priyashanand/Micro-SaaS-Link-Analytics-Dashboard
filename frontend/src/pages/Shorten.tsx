@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import axios, {AxiosError} from 'axios';
-import dotenv from 'dotenv';
-dotenv.config();
+import axios, { AxiosError } from 'axios';
 
-const backendUrl = import.meta.env.BACKEND_URL ?? 'http://localhost:3000';
+const backendUrl = import.meta.env.VITE_BACKEND_URL ?? 'http://localhost:3000';
 
-const Shorten = () => {
+interface ShortenProps {
+  token: string;
+}
+
+export default function Shorten({ token }: ShortenProps) {
   const [originalUrl, setOriginalUrl] = useState('');
   const [customAlias, setCustomAlias] = useState('');
   const [expirationDate, setExpirationDate] = useState('');
@@ -18,8 +20,6 @@ const Shorten = () => {
     setShortUrl('');
 
     try {
-      const token = localStorage.getItem('token');
-
       const response = await axios.post(
         `${backendUrl}/api/auth/shorten`,
         { originalUrl, customAlias, expirationDate },
@@ -33,7 +33,7 @@ const Shorten = () => {
       setShortUrl(response.data.shortUrl);
     } catch (err) {
       const errorTyped = err as AxiosError<{ message: string }>;
-      setError(errorTyped.response?.data?.message || 'Search failed')
+      setError(errorTyped.response?.data?.message || 'Shorten failed');
     }
   };
 
@@ -83,6 +83,4 @@ const Shorten = () => {
       )}
     </div>
   );
-};
-
-export default Shorten;
+}
