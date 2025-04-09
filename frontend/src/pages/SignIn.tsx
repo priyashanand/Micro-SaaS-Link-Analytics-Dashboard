@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import axios, { AxiosError } from 'axios';
 import { useNavigate } from 'react-router';
-import dotenv from 'dotenv';
-dotenv.config();
 
-const backendUrl = import.meta.env.BACKEND_URL ?? 'http://localhost:3000';
+const backendUrl = "https://micro-saas-link-analytics-dashboard.onrender.com";
 
 
 export default function SignIn({ onAuth }: { onAuth: (token: string) => void }) {

@@ -1,10 +1,8 @@
 // src/components/SignUp.tsx
 import { useState } from 'react';
 import axios, { AxiosError } from 'axios';
-import dotenv from 'dotenv';
-dotenv.config();
 
-const backendUrl = import.meta.env.BACKEND_URL ?? 'http://localhost:3000';
+const backendUrl = "https://micro-saas-link-analytics-dashboard.onrender.com";
 
 export default function SignUp({ onAuth }: { onAuth: (token: string) => void }) {
   const [email, setEmail] = useState('');

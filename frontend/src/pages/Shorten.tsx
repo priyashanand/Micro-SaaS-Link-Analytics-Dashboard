@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios, { AxiosError } from 'axios';
 
-const backendUrl = import.meta.env.VITE_BACKEND_URL ?? 'http://localhost:3000';
+const backendUrl = "https://micro-saas-link-analytics-dashboard.onrender.com";
 
 interface ShortenProps {
   token: string;

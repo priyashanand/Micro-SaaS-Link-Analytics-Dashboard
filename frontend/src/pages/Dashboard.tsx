@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { QRCodeSVG } from 'qrcode.react';
 
-const backendUrl = import.meta.env.VITE_BACKEND_URL ?? 'http://localhost:3000';
+
+const backendUrl = "https://micro-saas-link-analytics-dashboard.onrender.com";
 
 interface Link {
   _id: string;
